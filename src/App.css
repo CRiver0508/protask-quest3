@@ -1,0 +1,107 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@font-face {
+  font-family: 'NotoSerifJP';
+  src: url('./fonts/NotoSerifJP-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSerifJP-Bold';
+  src: url('./fonts/NotoSerifJP-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AoyagiSoseki';
+  src: url('./fonts/青柳疎石フォント2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SetoFont';
+  src: url('./fonts/setofont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Creepster'; /* フォント名 */
+  src: url('./fonts/Creepster-Regular.ttf') format('truetype'); /* ダウンロードしたフォントを指定 */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Onryou'; /* フォント名を設定 */
+  src: url('./fonts/onryou.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Persona5';
+  src: local('Persona5'), url('./fonts/Persona5main.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Persona5Menu';
+  src: local('Persona5Menu'), url('./fonts/Persona5MenuFontPrototype-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'P5Hatty';
+  src: local('P5Hatty'), url('./fonts/p5hatty-1.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Heavy';
+  src: local('Heavy'), url('./fonts/HEAVYHEA.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Expose';
+  src: local('Expose'), url('./fonts/Expose-Regular.otf') format('opentype');
+}
+
+
+
