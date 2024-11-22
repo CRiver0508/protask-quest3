@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { BrowserRouter } from 'react-router-dom'; // React Routerのインポート
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import TaskManager from './TaskManager';
 import Settings from './Settings';

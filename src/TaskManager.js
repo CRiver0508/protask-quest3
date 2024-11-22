@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom'; // React Routerから現在のURLを取得
 import './TaskManager.css';
 import './App.css';
 import avatar1 from './images/avatar1.png';
@@ -519,6 +520,29 @@ const resetTaskCompletion = () => {
     console.log("キャンセルされました。");
   }
 };
+
+
+const location = useLocation(); // 現在の画面パスを取得
+
+useEffect(() => {
+    if (location.pathname === "/") {
+        console.log("刑務画面が表示されました");
+        triggerEffectForTaskScreen();
+    }
+}, [location]); // locationが変化するたびに実行
+
+const triggerEffectForTaskScreen = () => {
+    console.log("刑務画面のエフェクトをトリガーしました");
+
+    const element = document.querySelector(".task-screen-container"); // 適切なクラス名を指定
+    if (element) {
+        element.style.transition = "opacity 1s ease-in-out"; // アニメーションの設定
+        element.style.opacity = "1"; // 表示
+    } else {
+        console.error("エフェクトを適用する要素が見つかりません");
+    }
+};
+
 
 
 return (
