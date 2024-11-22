@@ -529,7 +529,7 @@ useEffect(() => {
         console.log("刑務画面が表示されました");
         triggerEffectForTaskScreen();
     }
-}, [location]); // locationが変化するたびに実行
+}, [location.pathname]); // locationが変化するたびに実行
 
 const triggerEffectForTaskScreen = () => {
     console.log("刑務画面のエフェクトをトリガーしました");
