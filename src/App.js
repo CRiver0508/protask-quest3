@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import TaskManager from './TaskManager';
-import Settings from './Settings';
+import TaskManager from './pages/TaskManager';
+import Settings from './pages/Settings';
 import './App.css'; // 全体のスタイリング
 import './common.css'; // 共通のスタイル
+
 
 // 状態管理の初期値
 const initialCoins = { gold: 0, silver: 0, bronze: 0 };

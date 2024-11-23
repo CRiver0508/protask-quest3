@@ -10,45 +10,73 @@
 
 /* 全体を包むコンテナ */
 .task-manager-container {
-  position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh; /* 全画面に適用 */
+  background-color: black; /* 背景画像がない場合のフォールバック */
   display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* 上下の間隔を均等に配置 */
-}
-
-/* タスク画面のボタン */
-.button-container {
-  display: flex;
-  justify-content: center; /* ボタンを中央揃え */
-  gap: 10px; /* ボタン間のスペース */
-  margin: 20px 0; /* 上下に余白を追加 */
-}
-
-/* 朝礼ボタンのスタイル */
-.morning-meeting-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  justify-content: center;
 }
 
-.morning-meeting-button {
-  font-size: 3rem; /* 鈴アイコンのサイズ調整 */
-  cursor: pointer; /* クリック可能にする */
-  transition: transform 0.2s ease; /* ホバー時のアニメーション */
+/* 日付・曜日の右上配置 */
+.date-display-right {
+  position: fixed;
+  top: 10px; /* 画面上端から10px */
+  right: 20px; /* 画面右端から20px */
+  line-height: 1; /* 行間 */
+  text-align: right;
+  font-family: 'Persona5Menu'; /* ペルソナ5風のフォント */
+  color: white; /* テキストの色を白に */
+  z-index: 10; /* 他の要素の上に表示 */
 }
 
-.morning-meeting-button:hover {
-  transform: scale(1.1); /* ホバー時に拡大 */
+/* 日付と曜日のテキスト */
+@font-face {
+  font-family: 'Expose';
+  src: url('../fonts/Expose-Regular.otf') format('opentype');
+}
+.date-text {
+  font-family: 'Expose', sans-serif;
+  font-size: 50px; /* 適切なサイズを設定 */
+  color: #ffffff; /* 日付と曜日の色を指定 */
+  margin: 0;
 }
 
-.morning-meeting-button:disabled {
-  opacity: 0.5; /* 無効時は半透明にする */
-  cursor: not-allowed; /* 無効時のカーソル */
+.dayOfWeek-text {
+  font-family: 'Expose', sans-serif;
+  font-size: 60px; /* 適切なサイズを設定 */
+  color: #ffffff; /* 日付と曜日の色を指定 */
+  letter-spacing: 3px; /* 文字の間隔を広げる */
+  margin: 0;
 }
+
+/* 収監・怠業日数 */
+.date-display-bottom-right {
+  position: fixed;
+  bottom: 85px; /* 画面下端から切り替えボタン分だけ余白を開ける */
+  right: 20px; /* 画面右端から20px */
+  text-align: right;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border: 5px solid rgba(227, 36, 36, 0.342); /* 白色の外枠 */
+  border-radius: 5px;
+  box-shadow: 4px 4px 0px black, 0px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+@font-face {
+  font-family: 'Onryou';
+  src: url('../fonts/onryou.TTF') format('truetype');
+}
+/* 日数テキストのフォントスタイル */
+.date-display-bottom-right p {
+  font-family: 'Onryou', serif;
+  font-size: 23px; /* 適切なサイズを設定 */
+  color: #eaff00; /* 必要なら赤色に設定 */
+  margin: 0;
+}
+
 
 /* 刑務画面エフェクト */
 .fade-container {

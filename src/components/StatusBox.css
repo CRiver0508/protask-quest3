@@ -1,7 +1,7 @@
 /* ステータスボックス全体のスタイル */
 .status-box {
   position: absolute;
-  right: 20px;
+  right: 30px;
   bottom: 250px; /* 下側に配置 */
   background: rgba(0, 0, 0, 0.8); /* 半透明の黒背景 */
   color: #faf7f7; /* 白 */
@@ -9,7 +9,7 @@
   border-radius: 8px; /* 角を丸めてボックスに丸み */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 少し影をつけて見やすく */
   max-width: 200px; /* 最大幅を指定して幅を制限 */
-  line-height: 0.7; /* 行間を縮める */
+  line-height: 1.5; /* 行間を縮める */
   font-size: 20px; /* 文字サイズを大きく設定 */
   text-align: left; /* テキストの左寄せ */
   /* ペルソナのような縁取り効果 */

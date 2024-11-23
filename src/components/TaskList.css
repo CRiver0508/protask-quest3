@@ -6,9 +6,9 @@
   padding: 10px; /* 内側の余白 */
   border-radius: 8px; /* 角を丸める */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 少し影をつけて見やすく */
-  margin-top: 20px; /* 上に余白を追加 */
-  margin-left: 20px;
-  max-width: 570px; /* 最大幅を指定 */
+  margin-top: -400px; /* 上に余白を追加 */
+  margin-left: -210px;
+  max-width: 600px; /* 最大幅を指定 */
   text-align: left; /* テキストの左寄せ */
   /* ペルソナのような縁取り効果 */
   box-shadow:
@@ -31,7 +31,7 @@
 
 /* タスクのプレースホルダ付き入力欄 */
 .task-selection input[type="text"] {
-  width: 300px; /* 入力フィールドの幅を調整 */
+  width: 350px; /* 入力フィールドの幅を調整 */
   flex: 1; /* 幅を調整するためにフレックスを使用 */
   padding: 5px; /* 内側の余白 */
   font-size: 14px;

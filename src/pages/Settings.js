@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types'; // 型チェック用
 import './Settings.css'; // 必要に応じてスタイルシートを調整
-import backgroundImage2 from '../utils/images'; // 背景画像をutilsからインポート
-import './Settings.css';
-import './common.css'; // 共通のスタイル
+import { backgroundImage2 } from '../utils/images'; // 背景画像をutilsからインポート
+import '../common.css'; // 共通のスタイル
 
 
 const Settings = ({ coins, dailyTasks, falseReportCount }) => {

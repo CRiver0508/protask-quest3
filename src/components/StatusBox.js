@@ -38,7 +38,6 @@ const StatusBox = ({
       <p>力: {strength}</p>
       <p>知力: {intelligence}</p>
       <p>耐久: {endurance}</p>
-      <p>怠業日数: {missedDays}</p>
     </div>
   );
 };

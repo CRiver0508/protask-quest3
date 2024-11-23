@@ -1,36 +1,88 @@
-/* 完了・訂正ボタンの共通スタイル */
+.buttons-container {
+  display: flex; /* 子要素を縦並びにする */
+  flex-direction: column; /* 縦方向の並び */
+  justify-content: flex-start; /* 上寄せ */
+  align-items: center; /* 水平方向の中央寄せ */
+  gap: 10px; /* ボタン間のスペース */
+  position: absolute; /* ボタンの位置を調整可能にする */
+  top: 150px; /* 刑務作業の枠に重ねるように調整 */
+  right: 0px;
+}
+
 .task-button {
-  display: inline-block; /* ボタンをインラインブロック表示 */
-  padding: 10px 20px; /* ボタン内の余白 */
-  margin: 10px; /* ボタン間の余白 */
-  font-weight: bold; /* 太字 */
-  border: 2px solid #fcc1c1; /* 暗い色の枠線 */
-  border-radius: 5px; /* 角を少し丸める */
-  background-color: #860101; /* 暗い灰色の背景 */
-  color: #fcfafa; /* 白色の文字 */
-  font-size: 20px; /* 文字サイズ */
-  font-family: 'Onryou', serif; /* 怨霊フォントを適用 */
-  text-transform: uppercase; /* 文字をすべて大文字に */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* 文字に影をつける */
-  cursor: crosshair; /* マウスカーソルをポインターに変更 */
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* ボタンに影を追加 */
-  transition: all 0.3s ease; /* マウスオーバー時の変化をスムーズに */
+  display: block;
+  width: 80%; /* ボタンの幅を適切に設定（好みで調整可能） */
+  padding: 10px 20px;
+  font-weight: bold;
+  border: 2px solid #fcc1c1;
+  border-radius: 5px;
+  background-color: #860101;
+  color: #f8f5f5;
+  font-size: 20px;
+  font-family: 'Expose', serif;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  transition: all 0.3s ease;
 }
 
 /* 完了・訂正ボタンのホバー効果 */
 .task-button:hover {
-  background-color: #444; /* 少し明るい背景色 */
-  color: #ffd700; /* ゴールド色の文字 */
-  border-color: #ffd700; /* ゴールド色の枠線 */
+  background-color: #444;
+  color: #ffd700;
+  border-color: #ffd700;
 }
 
 /* ボタンが無効化された状態 */
 .task-button:disabled {
-  background-color: #680606; /* グレー */
-  color: #666666; /* テキストも薄いグレー */
-  border-color: #999999; /* ボーダーもグレー */
-  cursor: not-allowed; /* カーソルを無効化スタイルに */
+  background-color: #680606;
+  color: #666666;
+  border-color: #999999;
+  cursor: not-allowed;
 }
+
+
+/* 朝礼ボタンのスタイル */
+.morning-meeting-button {
+  position: absolute; /* 朝礼ボタンを独立配置 */
+  display: inline-block; /* ボタンをインラインブロック表示 */
+  left: 10px; /* 左端に配置 */
+  padding: 12px 25px; /* ボタン内の余白 */
+  margin-right: 300px; /* ボタン間の余白 */
+  font-weight: bold; /* 太字 */
+  border: 3px solid #ffffff; /* 白い枠線 */
+  border-radius: 30px; /* 丸みを帯びたボタン */
+  background: linear-gradient(135deg, #d50000, #000000); /* 赤から黒へのグラデーション */
+  color: #fcfafa; /* 白色の文字 */
+  font-size: 18px; /* 文字サイズ */
+  font-family: 'Persona5Menu', sans-serif; /* ペルソナ5風フォント */
+  text-transform: uppercase; /* 文字をすべて大文字に */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* 文字に影をつける */
+  cursor: pointer; /* マウスカーソルをポインターに変更 */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7); /* ボタンに影を追加 */
+  transition: all 0.3s ease; /* マウスオーバー時の変化をスムーズに */
+}
+
+/* 朝礼ボタン ホバー時のエフェクト */
+.morning-meeting-button:hover {
+  background: linear-gradient(135deg, #ffffff, #d50000); /* ホバー時の色変更 */
+  transform: translateY(-5px) scale(1.1); /* ホバー時に拡大して持ち上げる */
+  color: #ffd700; /* ゴールドの文字 */
+  border-color: #ffd700; /* ゴールドの枠線 */
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.9); /* ホバー時の影を強調 */
+}
+
+/* 朝礼ボタンが無効化された状態 */
+.morning-meeting-button:disabled {
+  background: #333333; /* グレー */
+  color: #999999; /* テキストも薄いグレー */
+  border-color: #666666; /* ボーダーもグレー */
+  cursor: not-allowed; /* カーソルを無効化スタイルに */
+  transform: none; /* 拡大エフェクトを無効化 */
+  box-shadow: none; /* 影を削除 */
+}
+
 
 /* 刑務と詳細ボタン */
 .navigation-buttons {
