@@ -1,0 +1,111 @@
+/* タスクセクション全体のスタイル */
+.task-selection {
+  position: relative;
+  background: rgba(249, 1, 1, 0.8); /* 半透明の赤背景 */
+  color: #faf7f7; /* 白色テキスト */
+  padding: 10px; /* 内側の余白 */
+  border-radius: 8px; /* 角を丸める */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 少し影をつけて見やすく */
+  margin-top: 20px; /* 上に余白を追加 */
+  margin-left: 20px;
+  max-width: 570px; /* 最大幅を指定 */
+  text-align: left; /* テキストの左寄せ */
+  /* ペルソナのような縁取り効果 */
+  box-shadow:
+    4px 4px 0px black,   /* 下 */
+    -4px -4px 0px white, /* 上 */
+    4px -4px 0px black,  /* 右上 */
+    -4px 4px 0px black;  /* 左下 */
+  border: 2px solid white; /* 外枠の白い線 */
+  transform: skew(-3deg, -3deg); /* わずかに歪ませる */
+}
+
+/* タスク名とコメント欄を含むラベル */
+.task-selection label {
+  display: flex;
+  align-items: center; /* 垂直方向に中央揃え */
+  margin-bottom: 10px; /* 各タスクの間にスペースを追加 */
+  font-size: 16px; /* タスク名のフォントサイズ */
+  color: #fff; /* 白色テキスト */
+}
+
+/* タスクのプレースホルダ付き入力欄 */
+.task-selection input[type="text"] {
+  width: 300px; /* 入力フィールドの幅を調整 */
+  flex: 1; /* 幅を調整するためにフレックスを使用 */
+  padding: 5px; /* 内側の余白 */
+  font-size: 14px;
+  margin-left: 10px; /* チェックボックスとの間に余白を設定 */
+  line-height: 1; /* 行間を縮める */
+  border: 1px solid #ccc; /* 入力フィールドの枠線 */
+  border-radius: 4px; /* 角を丸める */
+  color: #c9c7c6; /* テキストの色 */
+  background-color: #020202; /* 入力欄の背景色 */
+}
+
+/* プレースホルダのスタイル */
+.task-selection input[type="text"]::placeholder {
+  color: #666; /* プレースホルダのテキスト色 */
+  font-style: italic; /* イタリック体 */
+}
+
+/* チェックボックス */
+input[type="checkbox"] {
+  width: 15px; /* チェックボックスの幅 */
+  height: 15px; /* チェックボックスの高さ */
+  transform: scale(1.5); /* サイズを拡大 */
+  margin: 5px; /* 周囲の余白 */
+  accent-color: black; /* チェック時の色を黒に設定 */
+}
+
+/* プレースホルダの入力欄にエフェクトを追加 */
+.task-selection input[type="text"]:focus {
+  outline: none; /* フォーカス時のデフォルト枠を削除 */
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.8); /* 赤い光のエフェクト */
+}
+
+/* タスク名のスタイル */
+.task-char {
+  display: inline-block;
+  padding: 5px;
+  margin: 0 2px;
+  font-size: 20px; /* 基本文字サイズ */
+  font-weight: bold;
+  border-radius: 4px; /* 角の丸み */
+  text-transform: uppercase; /* 全て大文字に */
+}
+
+/* 特定のタスクのスタイル（例: "刑", "務", "作", "業"） */
+.task-char-1 {
+  font-size: 32px;
+  color: white;
+  background: black;
+  transform: rotate(-10deg);
+}
+
+.task-char-2 {
+  font-size: 24px;
+  color: rgb(251, 249, 249);
+  background: red;
+  transform: rotate(15deg);
+}
+
+.task-char-3 {
+  font-size: 28px;
+  color: rgb(7, 0, 0);
+  background: #d3d3d3;
+  transform: rotate(-5deg);
+}
+
+.task-char-4 {
+  font-size: 22px;
+  color: rgb(249, 4, 4);
+  background: repeating-linear-gradient(
+    45deg,
+    gray,
+    gray 3px,
+    white 3px,
+    white 6px
+  );
+  transform: rotate(10deg);
+}

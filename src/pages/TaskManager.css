@@ -1,0 +1,142 @@
+/* 背景画像（刑務画面の背景） */
+.background-container {
+  position: relative; /* アバター配置の基準を作る */
+  background-size: cover; /* 背景を画面いっぱいに表示 */
+  background-position: center center; /* 背景の中央に配置 */
+  height: 100vh; /* 背景の高さを設定 */
+  width: 100%; /* 背景の幅を全体に広げる */
+  z-index: -1; /* 他の要素の後ろに表示 */
+}
+
+/* 全体を包むコンテナ */
+.task-manager-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 上下の間隔を均等に配置 */
+}
+
+/* タスク画面のボタン */
+.button-container {
+  display: flex;
+  justify-content: center; /* ボタンを中央揃え */
+  gap: 10px; /* ボタン間のスペース */
+  margin: 20px 0; /* 上下に余白を追加 */
+}
+
+/* 朝礼ボタンのスタイル */
+.morning-meeting-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.morning-meeting-button {
+  font-size: 3rem; /* 鈴アイコンのサイズ調整 */
+  cursor: pointer; /* クリック可能にする */
+  transition: transform 0.2s ease; /* ホバー時のアニメーション */
+}
+
+.morning-meeting-button:hover {
+  transform: scale(1.1); /* ホバー時に拡大 */
+}
+
+.morning-meeting-button:disabled {
+  opacity: 0.5; /* 無効時は半透明にする */
+  cursor: not-allowed; /* 無効時のカーソル */
+}
+
+/* 刑務画面エフェクト */
+.fade-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black; /* 背景を黒に */
+  z-index: 20; /* 他の要素より前に表示 */
+  animation: fadeOut 1.5s ease-in forwards; /* フェードアウトのアニメーション */
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; /* 完全に黒 */
+  }
+  100% {
+    opacity: 0; /* 徐々に透明に */
+  }
+}
+
+/* グラデーションラインのスライドエフェクト */
+.gradient-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px; /* ラインの高さ */
+  background: linear-gradient(90deg, red, black, red); /* ペルソナ風赤黒グラデーション */
+  animation: slideLine 1.5s ease-in-out; /* スライドインとアウト */
+}
+
+@keyframes slideLine {
+  0% {
+    transform: translateY(-50px); /* 初期位置は画面外 */
+  }
+  50% {
+    transform: translateY(10px); /* 少し下にスライド */
+  }
+  100% {
+    transform: translateY(-50px); /* 画面外に戻る */
+  }
+}
+
+/* スライド＆フェードエフェクト */
+.persona-overlay {
+  position: fixed; /* 画面全体を覆う */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, red, black); /* 赤黒いグラデーション */
+  z-index: 1000; /* 他の要素の前面に */
+  animation: personaSlideFade 2s ease-in-out forwards; /* 2秒でスライド＆フェード */
+  pointer-events: none; /* クリックを透過 */
+}
+
+@keyframes personaSlideFade {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-50%);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+/* タスク画面開いたときのエフェクト */
+@keyframes levelUpGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(20px); /* 初期位置を少し下に */
+    opacity: 0.8; /* 少し透明から始める */
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 50, 50, 1), 0 0 40px rgba(50, 50, 50, 1);
+    transform: translateY(-10px); /* 少し上に移動 */
+    opacity: 1; /* 完全に表示 */
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(0); /* 元の位置に戻る */
+    opacity: 1;
+  }
+}

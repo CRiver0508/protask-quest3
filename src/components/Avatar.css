@@ -1,0 +1,90 @@
+/* 背景画像（牢獄） */
+.background-container {
+  position: relative; /* アバター配置の基準を作る */
+  background-size: cover; /* 背景を画面いっぱいに表示 */
+  background-position: center center; /* 画面下部を基準に配置 */
+  height: 100vh; /* 背景の高さを設定 */
+  width: 100%; /* 背景の幅を全体に広げる */
+}
+
+/* アバターの位置 */
+.avatar-container {
+  position: absolute; /* 親の.relative（.background-container）を基準に配置 */
+  bottom: -15px; /* 背景の下端から〇px */
+  left: 42%; /* 水平方向に中央揃え */
+  transform: translateX(-50%); /* 完全に中央揃え */
+  text-align: center; /* コメントを中央揃え */
+}
+
+/* アバターの大きさ */
+.avatar-image {
+  width: auto; /* アバター画像のサイズ */
+  height: 500px; /* アスペクト比を維持 */
+}
+
+/* アバターの吹き出し */
+.avatar-comment {
+  position: relative; /* 親要素に対する位置指定 */
+  margin-top: -15px; /* 吹き出しの間隔 */
+  margin-left: -50px;
+  padding: 10px 20px; /* 内側の余白 */
+  background: linear-gradient(135deg, #ff0000, #000000); /* 赤と黒のグラデーション */
+  color: white; /* 文字色 */
+  font-weight: bold; /* 太字 */
+  font-size: 1.1rem; /* 文字サイズ */
+  width: 500px; /* 固定幅を設定 */
+  text-align: left; /* テキストの左寄せ */
+  border: 3px solid black; /* 黒い枠線 */
+  border-radius: 8px; /* 角を少し丸くする */
+  box-shadow: 5px 5px 0px black, 0px 0px 10px rgba(0, 0, 0, 0.5); /* 黒いシャドウ効果 */
+  text-shadow: 2px 2px 0px black, -2px -2px 0px black; /* 文字に縁取りを追加 */
+  z-index: 1; /* 他の要素よりも前に表示 */
+  overflow: visible; /* 吹き出しの外に出ても要素を表示 */
+}
+
+/* 吹き出しの矢印を上に配置 */
+.avatar-comment::before {
+  content: '';
+  position: absolute;
+  top: -15px; /* 吹き出しの上に矢印を配置 */
+  left: 250px; /* 吹き出しの左端から矢印までの距離 */
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 15px 15px 15px; /* 下向きの三角形を作成 */
+  border-color: transparent transparent black transparent; /* 黒い矢印 */
+  z-index: 0; /* 吹き出しの背景として表示 */
+}
+
+/* アバター変化時のエフェクト */
+.avatar-container.avatar-changing {
+  animation: levelUpGlow 1.5s ease-in-out, risingStripes 1.5s linear;
+}
+
+/* レベルアップ用エフェクト */
+@keyframes levelUpGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(20px); /* 初期位置を少し下に */
+    opacity: 0.8; /* 少し透明から始める */
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 50, 50, 1), 0 0 40px rgba(50, 50, 50, 1);
+    transform: translateY(-10px); /* 少し上に移動 */
+    opacity: 1; /* 完全に表示 */
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(0); /* 元の位置に戻る */
+    opacity: 1;
+  }
+}
+
+@keyframes risingStripes {
+  0% {
+    background-position: 0% 100%; /* 下から始まる */
+  }
+  100% {
+    background-position: 0% 0%; /* 上に移動 */
+  }
+}

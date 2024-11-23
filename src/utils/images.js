@@ -32,8 +32,8 @@ export const avatars = [
 ];
 
 // 背景画像リスト
-export const backgrounds = {
-  background1: require('../images/background1.jpg'),
-  background2: require('../images/background2.jpg'),
-};
+export const backgrounds = [
+  require('../images/background1.jpg'),
+  require('../images/background2.jpg'),
+];
 

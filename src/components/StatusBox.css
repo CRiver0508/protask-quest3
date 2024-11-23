@@ -1,0 +1,83 @@
+/* ステータスボックス全体のスタイル */
+.status-box {
+  position: absolute;
+  right: 20px;
+  bottom: 250px; /* 下側に配置 */
+  background: rgba(0, 0, 0, 0.8); /* 半透明の黒背景 */
+  color: #faf7f7; /* 白 */
+  padding: 15px; /* 内側の余白 */
+  border-radius: 8px; /* 角を丸めてボックスに丸み */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 少し影をつけて見やすく */
+  max-width: 200px; /* 最大幅を指定して幅を制限 */
+  line-height: 0.7; /* 行間を縮める */
+  font-size: 20px; /* 文字サイズを大きく設定 */
+  text-align: left; /* テキストの左寄せ */
+  /* ペルソナのような縁取り効果 */
+  box-shadow:
+    4px 4px 0px black,   /* 下 */
+    -4px -4px 0px white, /* 上 */
+    4px -4px 0px black,  /* 右上 */
+    -4px 4px 0px black;  /* 左下 */
+  border: 2px solid white; /* 外枠の白い線 */
+}
+
+/* レベルアップ用エフェクト */
+.status-box.level-up-effect {
+  animation: levelUpGlow 1.5s ease-in-out, risingStripes 1.5s linear;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7) 10px,
+    rgba(255, 0, 0, 0.7) 20px,
+    rgba(0, 0, 0, 0.7) 30px
+  );
+  background-size: 200% 200%;
+  border: 3px solid rgba(255, 0, 0, 1); /* 赤い枠線を追加 */
+}
+
+/* レベルダウン用エフェクト */
+.status-box.level-down-effect {
+  animation: redBlackFade 2s ease forwards; /* 赤黒いもやエフェクト */
+  background: radial-gradient(circle, rgba(255, 0, 0, 1), rgba(0, 0, 0, 1)); /* 初期の赤黒もや */
+}
+
+/* レベルアップのアニメーション */
+@keyframes levelUpGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(20px); /* 初期位置を少し下に */
+    opacity: 0.8; /* 少し透明から始める */
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 50, 50, 1), 0 0 40px rgba(50, 50, 50, 1);
+    transform: translateY(-10px); /* 少し上に移動 */
+    opacity: 1; /* 完全に表示 */
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(0); /* 元の位置に戻る */
+    opacity: 1;
+  }
+}
+
+/* 背景の縞模様が上昇するアニメーション */
+@keyframes risingStripes {
+  0% {
+    background-position: 0% 100%; /* 下から始まる */
+  }
+  100% {
+    background-position: 0% 0%; /* 上に移動 */
+  }
+}
+
+/* レベルダウン時の赤黒いエフェクト */
+@keyframes redBlackFade {
+  0% {
+    background: radial-gradient(circle, rgba(255, 0, 0, 1), rgba(0, 0, 0, 1));
+    opacity: 1; /* 完全に表示 */
+  }
+  100% {
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    opacity: 0; /* 徐々に透明に */
+  }
+}

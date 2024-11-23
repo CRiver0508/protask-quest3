@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './StatusBox.css'; // CSSファイルのインポート
 
 /**
  * ステータス表示コンポーネント
@@ -9,6 +10,7 @@ import PropTypes from 'prop-types';
  * @param {number} strength - 現在の力
  * @param {number} intelligence - 現在の知力
  * @param {number} endurance - 現在の耐久
+ * @param {number} missedDays - 怠業日数
  * @param {boolean} isLevelUp - レベルアップエフェクトを表示するか
  * @param {boolean} isLevelDown - レベルダウンエフェクトを表示するか
  */
@@ -19,6 +21,7 @@ const StatusBox = ({
   strength,
   intelligence,
   endurance,
+  missedDays,
   isLevelUp,
   isLevelDown,
 }) => {
@@ -35,6 +38,7 @@ const StatusBox = ({
       <p>力: {strength}</p>
       <p>知力: {intelligence}</p>
       <p>耐久: {endurance}</p>
+      <p>怠業日数: {missedDays}</p>
     </div>
   );
 };
@@ -46,6 +50,7 @@ StatusBox.propTypes = {
   strength: PropTypes.number.isRequired, // 力（必須）
   intelligence: PropTypes.number.isRequired, // 知力（必須）
   endurance: PropTypes.number.isRequired, // 耐久（必須）
+  missedDays: PropTypes.number.isRequired, // 怠業日数（必須）
   isLevelUp: PropTypes.bool, // レベルアップエフェクトのフラグ（オプション）
   isLevelDown: PropTypes.bool, // レベルダウンエフェクトのフラグ（オプション）
 };

@@ -1,0 +1,94 @@
+/* 詳細画面の背景 */
+.settings-background {
+  position: fixed; /* スクロールしても固定 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.7) blur(5px); /* 暗めにしてぼかし効果を追加 */
+  z-index: -1; /* 他の要素の後ろに配置 */
+}
+
+/* 詳細画面全体を囲む */
+.settings-content {
+  position: relative;
+  z-index: 1; /* 背景より前に表示 */
+  padding: 20px;
+  color: white; /* テキストを白色に */
+  font-family: 'Persona5Menu', sans-serif; /* ペルソナ5風フォント */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* テキストに影をつける */
+  margin: 20px auto;
+  max-width: 800px; /* 横幅を制限して読みやすく */
+  background: rgba(0, 0, 0, 0.6); /* 背景に半透明の黒を追加 */
+  border-radius: 8px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8); /* コンテンツ全体に影を追加 */
+  animation: slide-in 1s ease-out; /* スライドインのアニメーション */
+}
+
+/* 見出しのスタイル */
+.settings-content h2 {
+  font-size: 2.5rem;
+  color: #ff0000; /* 鮮やかな赤 */
+  text-transform: uppercase; /* すべて大文字に */
+  text-shadow: 3px 3px 0px black, -3px -3px 0px white; /* ペルソナ風の縁取り */
+  margin-bottom: 20px;
+}
+
+/* 小見出しのスタイル */
+.settings-content h3 {
+  font-size: 1.8rem;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0px black, -2px -2px 0px #ff0000; /* 赤の縁取り */
+  margin-bottom: 15px;
+}
+
+/* テキストコンテンツのスタイル */
+.settings-content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #fdfdfd; /* 優しい白色 */
+  margin-bottom: 10px;
+}
+
+/* 各セクションをリスト風に強調 */
+.settings-content div {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-left: 5px solid #ff0000; /* 赤いラインで強調 */
+  background: rgba(255, 255, 255, 0.1); /* 透明感を持たせた背景 */
+}
+
+/* 虚偽の報告セクション */
+.false-report-section {
+  font-size: 1.5rem; /* 全体の文字サイズを大きく */
+  color: #ff0000; /* 赤色で強調 */
+  font-weight: bold; /* 太字にして目立たせる */
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8); /* 文字に影を追加 */
+  display: flex; /* ラベルと数字を横並びに */
+  align-items: center; /* 数字を中央揃え */
+  justify-content: space-between; /* ラベルと数字の間にスペースを確保 */
+}
+
+/* 数字部分のスタイル */
+.false-report-number {
+  font-size: 4rem; /* 数字をさらに大きく */
+  color: #ff0000; /* 鮮やかな赤色 */
+  font-weight: normal;
+  text-shadow: 4px 4px 5px black; /* より強調する影を追加 */
+  margin-left: 10px; /* 数字とテキストの間隔を追加 */
+}
+
+/* スライドインアニメーション */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* 下からスライドイン */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* 元の位置に収まる */
+  }
+}

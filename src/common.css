@@ -1,0 +1,97 @@
+/* グローバルなリセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ベースフォント */
+body {
+  font-family: 'NotoSerifJP', sans-serif;
+  background-color: #000; /* 全体の背景を黒に */
+  color: #fff; /* テキストを白に */
+  line-height: 1.6; /* 読みやすい行間 */
+  overflow-x: hidden; /* 横スクロールを防ぐ */
+}
+
+/* 全体のリンクスタイル */
+a {
+  text-decoration: none; /* デフォルトの下線を削除 */
+  color: inherit; /* 親要素の色を継承 */
+  transition: color 0.2s ease-in-out; /* カラー変更にアニメーション */
+}
+
+a:hover {
+  color: #ff0000; /* ホバー時に赤色に */
+}
+
+/* 共通ボックススタイル */
+.box {
+  background: rgba(0, 0, 0, 0.7); /* 半透明の黒背景 */
+  padding: 20px;
+  border-radius: 8px; /* 丸みを持たせる */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 影を追加 */
+}
+
+/* 共通ボタンスタイル */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #444;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: #ff0000; /* ホバー時に赤色に */
+  color: #fff;
+  border-color: #ff0000;
+}
+
+button:disabled {
+  background-color: #555;
+  color: #ccc;
+  border-color: #666;
+  cursor: not-allowed;
+}
+
+/* レスポンシブ用の共通設定 */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .box {
+    padding: 15px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* 共通テキストシャドウ */
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 軽い影を追加 */
+}
+
+/* 共通アニメーション */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.5s ease-in-out;
+}

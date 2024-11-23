@@ -1,107 +1,90 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* 全体のレイアウト */
+.app-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100vh; /* 画面全体をカバー */
+  background-color: #000; /* 背景を黒に設定 */
+  color: #fff; /* テキストを白に設定 */
+  font-family: 'NotoSerifJP', sans-serif; /* 共通フォント */
+  overflow-x: hidden; /* 横スクロールを防止 */
+}
+
+/* ナビゲーションバー */
+.navigation-buttons {
+  position: fixed;
+  bottom: 20px; /* 画面下部に配置 */
+  right: 20px; /* 右端に配置 */
+  display: flex;
+  flex-direction: row;
+  gap: 15px; /* ボタン間のスペース */
+  z-index: 1000; /* 他の要素の前面に */
+}
+
+.circle-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff0000, #000000); /* 赤黒グラデーション */
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  border: 2px solid black;
+  box-shadow: 5px 5px 0px black, 0px 0px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  font-family: 'Persona5Menu'; /* ペルソナ風フォント */
 }
 
-.App-link {
-  color: #61dafb;
+.circle-button:hover {
+  background: linear-gradient(135deg, #ffffff, #ff0000); /* ホバー時の色変更 */
+  transform: scale(1.1); /* ホバー時に拡大 */
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
+/* 背景設定 */
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* コンテンツの背後に配置 */
+}
+
+/* フェードイン効果 */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
   }
 }
-@font-face {
-  font-family: 'NotoSerifJP';
-  src: url('./fonts/NotoSerifJP-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
 }
 
-@font-face {
-  font-family: 'NotoSerifJP-Bold';
-  src: url('./fonts/NotoSerifJP-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
+/* 全体のリンクスタイル */
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-@font-face {
-  font-family: 'AoyagiSoseki';
-  src: url('./fonts/青柳疎石フォント2.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+a:hover {
+  color: #ff0000; /* 赤色に変更 */
 }
 
-@font-face {
-  font-family: 'SetoFont';
-  src: url('./fonts/setofont.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .circle-button {
+    width: 50px;
+    height: 50px;
+    font-size: 14px;
+  }
 }
-
-@font-face {
-  font-family: 'Creepster'; /* フォント名 */
-  src: url('./fonts/Creepster-Regular.ttf') format('truetype'); /* ダウンロードしたフォントを指定 */
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Onryou'; /* フォント名を設定 */
-  src: url('./fonts/onryou.TTF') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Persona5';
-  src: local('Persona5'), url('./fonts/Persona5main.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Persona5Menu';
-  src: local('Persona5Menu'), url('./fonts/Persona5MenuFontPrototype-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'P5Hatty';
-  src: local('P5Hatty'), url('./fonts/p5hatty-1.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Heavy';
-  src: local('Heavy'), url('./fonts/HEAVYHEA.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Expose';
-  src: local('Expose'), url('./fonts/Expose-Regular.otf') format('opentype');
-}
-
-
-

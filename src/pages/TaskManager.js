@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom'; // 現在のURLパスを取得
+import { avatars, backgrounds } from './utils/images';
+import Avatar from './components/Avatar';
+import Button from './components/Button';
+import StatusBox from './components/StatusBox';
+import TaskList from './components/TaskList';
 import './TaskManager.css';
-import { avatars, backgrounds } from '../utils/images'; // utilsから画像をインポート
-import Avatar from '../components/Avatar'; // Avatarコンポーネント
-import StatusBox from '../components/StatusBox'; // StatusBoxコンポーネント
-import TaskList from '../components/TaskList'; // TaskListコンポーネント
-import Button from '../components/Button'; // Buttonコンポーネント
+import './common.css'; // 共通のスタイル
+
 
 const TaskManager = ({
   coins,
@@ -69,6 +71,7 @@ const TaskManager = ({
   useEffect(() => {
     const savedTasks = JSON.parse(localStorage.getItem('dailyTasks')) || [];
     const savedStatus = JSON.parse(localStorage.getItem('status')) || {};
+    const savedMissedDays = localStorage.getItem('missedDays');
 
     setDailyTasks(savedTasks);
     setStrength(savedStatus.strength || 8);
@@ -77,7 +80,8 @@ const TaskManager = ({
     setIntelligence(savedStatus.intelligence || 1);
     setMp(savedStatus.mp || 0);
     setLevel(savedStatus.level || 1);
-  }, []);
+    setMissedDays(Number(savedMissedDays) || 0);
+  }, [setDailyTasks]);
 
   // ローカルストレージへの保存
   useEffect(() => {
@@ -86,7 +90,8 @@ const TaskManager = ({
       'status',
       JSON.stringify({ strength, endurance, hp, intelligence, mp, level })
     );
-  }, [dailyTasks, strength, endurance, hp, intelligence, mp, level]);
+    localStorage.setItem('missedDays', missedDays);
+  }, [dailyTasks, strength, endurance, hp, intelligence, mp, level, missedDays]);
 
   // locationパスによるエフェクトトリガー
   const location = useLocation();
@@ -115,6 +120,7 @@ const TaskManager = ({
         hp={hp}
         intelligence={intelligence}
         mp={mp}
+        missedDays={missedDays}
       />
 
       {/* タスクリスト */}
