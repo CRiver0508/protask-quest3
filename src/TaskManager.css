@@ -329,6 +329,7 @@ input[type="checkbox"] {
   margin-left: 505px;
   font-family: 'Expose', serif; /* 怨霊フォントを適用 */
   text-align: left;
+  z-index: 1; /* 他の要素よりも前に表示 */
   text-shadow: 
     5px 5px 0px rgb(5, 5, 5), /* 上 */
     -1px 5px 0px rgb(7, 0, 0), /* 下 */
