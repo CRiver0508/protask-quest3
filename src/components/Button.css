@@ -22,7 +22,7 @@
   font-family: 'Expose', serif;
   text-transform: uppercase;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
+  cursor: crosshair; /* カーソルを十字に */
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
   transition: all 0.3s ease;
 }
@@ -59,7 +59,7 @@
   font-family: 'Persona5Menu', sans-serif; /* ペルソナ5風フォント */
   text-transform: uppercase; /* 文字をすべて大文字に */
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* 文字に影をつける */
-  cursor: pointer; /* マウスカーソルをポインターに変更 */
+  cursor: crosshair; /* カーソルを十字に */
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7); /* ボタンに影を追加 */
   transition: all 0.3s ease; /* マウスオーバー時の変化をスムーズに */
 }
@@ -84,11 +84,11 @@
 }
 
 
-/* 刑務と詳細ボタン */
+/* 刑務と詳細ボタンのコンテナ */
 .navigation-buttons {
-  position: fixed; /* スクロールに影響されないよう固定 */
-  bottom: 10px; /* 背景画像の下端からの距離 */
-  right: 20px; /* 右端からの距離 */
+  position: relative; 
+  bottom: 5px !important; /* 背景画像の下端からの距離を強制的に適用 */
+  right: 20px !important; /* 右端からの距離を強制的に適用 */
   display: flex;
   flex-direction: row; /* ボタンを横並びに配置 */
   gap: 10px; /* ボタン間のスペース */
@@ -96,9 +96,9 @@
 }
 
 /* 刑務と詳細ボタン */
-.circle-button {
-  width: 60px; /* ボタンの直径 */
-  height: 60px; /* ボタンの直径 */
+.navigation-buttons .circle-button {
+  width: 70px !important; /* ボタンの直径を強制的に適用 */
+  height: 70px !important; /* ボタンの直径を強制的に適用 */
   border-radius: 50%; /* 丸くする */
   background: linear-gradient(135deg, #ff0000, #000000); /* ペルソナ5風グラデーション */
   color: white;
@@ -108,7 +108,7 @@
   font-weight: bold;
   text-decoration: none; /* リンクの下線を消す */
   text-align: center;
-  border: 2px solid black; /* ボタンの枠線 */
+  border: 3px solid black; /* ボタンの枠線 */
   box-shadow: 5px 5px 0px black, 0px 0px 10px rgba(0, 0, 0, 0.5); /* 影を追加 */
   transition: transform 0.2s ease, background-color 0.2s ease; /* ホバーアニメーション */
   font-family: 'Persona5Menu'; /* フォントをペルソナ風に */
@@ -116,8 +116,8 @@
 }
 
 /* 刑務と詳細ボタン ホバー時のエフェクト */
-.circle-button:hover {
+.navigation-buttons .circle-button:hover {
   background: linear-gradient(135deg, #ffffff, #ff0000); /* ホバー時の色変更 */
   transform: scale(1.1); /* ホバー時に拡大 */
-  cursor: pointer; /* カーソルをポインターに */
+  cursor: crosshair; /* カーソルを十字に */
 }

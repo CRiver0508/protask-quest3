@@ -20,7 +20,7 @@
 
 /* 日付・曜日の右上配置 */
 .date-display-right {
-  position: fixed;
+  position: absolute;
   top: 10px; /* 画面上端から10px */
   right: 20px; /* 画面右端から20px */
   line-height: 1; /* 行間 */
@@ -52,7 +52,7 @@
 
 /* 収監・怠業日数 */
 .date-display-bottom-right {
-  position: fixed;
+  position: absolute;
   bottom: 85px; /* 画面下端から切り替えボタン分だけ余白を開ける */
   right: 20px; /* 画面右端から20px */
   text-align: right;
